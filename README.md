@@ -17,6 +17,7 @@ http://www.sysorem.xyz/2016/05/22/get-root-and-start-ssh-on-xiaomi-router-youth-
 
 潘多拉v14.09 源镜像
 http://pandorabox-sysorem.rhcloud.com/ralink/mt7620/packages/
+http://pandorabox.sysorem.xyz/ralink/mt7620/packages/
 
 小米路由器 青春版 PandoraBox软件源
 主机名 PandoraBox
