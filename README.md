@@ -25,3 +25,7 @@ http://pandorabox.sysorem.xyz/ralink/mt7620/packages/
 内核版本 3.14.52
 源设置：src/gz packages http://pandorabox.sysorem.xyz/ralink/mt7620/packages/
 
+
+
+*************************************************
+backup-PandoraBox-2016-06-05.tar.gz   	sysorem_backup 
