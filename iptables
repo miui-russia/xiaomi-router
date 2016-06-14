@@ -1,0 +1,49 @@
+iptables -t nat -N SHADOWSOCKS
+iptables -t nat -F SHADOWSOCKS
+
+# server
+iptables -t nat -A SHADOWSOCKS -d 45.78.3.236 -j RETURN
+
+# reserved networks
+iptables -t nat -A SHADOWSOCKS -d 10.0.0.0/8 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 127.0.0.0/8 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 172.16.0.0/12 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 192.168.0.0/16 -j RETURN
+
+# proxy
+iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT --to-ports 8081
+iptables -t nat -A SHADOWSOCKS -p udp -j REDIRECT --to-ports 8081
+
+# apply the rules
+iptables -t nat -I PREROUTING -j SHADOWSOCKS
+
+________________________
+
+iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT --to-ports 8081
+
+iptables -t nat -A PREROUTING -p tcp -j SHADOWSOCKS
+iptables -t nat -A OUTPUT -p tcp -j SHADOWSOCKS
+
+
+_____
+
+
+iptables -t nat -N SHADOWSOCKS
+iptables -t nat -F SHADOWSOCKS
+
+# server
+iptables -t nat -A SHADOWSOCKS -d 45.78.3.236 -j RETURN
+
+# reserved networks
+iptables -t nat -A SHADOWSOCKS -d 10.0.0.0/8 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 127.0.0.0/8 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 172.16.0.0/12 -j RETURN
+iptables -t nat -A SHADOWSOCKS -d 192.168.0.0/16 -j RETURN
+
+
+# google
+iptables -t nat -A SHADOWSOCKS -p tcp -j REDIRECT --to-ports 8081
+
+# apply the rules
+iptables -t nat -A PREROUTING -p tcp -j SHADOWSOCKS
+iptables -t nat -A OUTPUT -p tcp -j SHADOWSOCKS
